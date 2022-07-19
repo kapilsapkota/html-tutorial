@@ -1,0 +1,9 @@
+git config --global user.name "Your username"
+git config --global user.email "youruser@email.com"
+git clone https://github.com/kapilsapkota/html-tutorial
+git pull
+
+Make your folder and work around 
+git add .
+git commit -m "Your Work Yourname"
+git push origin main
