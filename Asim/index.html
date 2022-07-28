@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS start</title>
+</head>
+<body>
+	<h2>Welcome to the site</h2>
+	<ul class="nav">
+		<li><a href="homee.html" target="_blank">Home</a></li>
+		<li><a href="about.html" target="_blank">About</a></li>
+		<li><a href="services.html" target="_blank">Services</a></li>
+		<li><a href="contact.html" target="_blank">Contact</a></li>
+	</ul>
+	<form method="post" action="">
+		<label>Level</label><br>
+		<select>
+			<option disabled>--choose role--</option>
+			<option>bachelors</option>
+			<option>masters</option>
+			<option>+2</option>
+		</select><br>
+		<label>Username</label><br>
+			<input placeholder="Enter Username" min="5" max="50" type="text" name="username" id="username" class="texts"><br>
+		<label>Email</label><br>
+			<input placeholder="Enter email" type="email" name="email" id="email" class="texts"><br>
+		<label>Enter password</label><br>
+			<input placeholder="Enter password" type="password" name="pass" id="pass" class="texts"><br>
+		<label>role</label><br>
+		<select name="Role" id="role">
+			<option disabled>--choose role--</option>
+			<option>super admin</option>
+			<option>non admin</option>
+		</select><br>
+		<label>Date</label><br>
+		<input type="Date" name="Date" id="date"><br>
+		<label>Gender</label><br>
+		<label>Male</label>
+		<input type="radio" name="Gender" value="Male">
+		<label>Female</label>
+		<input type="radio" name="Gender" value="Female"><br>
+		<label>Skills: </label>
+		<input type="checkbox" name="Skills" id="PHP">PHP
+		<input type="checkbox" name="Skills" id="CSS">CSS
+		<input type="checkbox" name="Skills" id="HTML">HTML
+		<input type="checkbox" name="Skills" id="Javascript">Javascript<br>
+		<label class="label">Remarks</label>
+		<textarea maxlength="500" name="Remarks" id="Remarks" rows="3"></textarea><br>
+		<button type="submit">Submit</button>
+	</form>
+	<p id="current_date" style="color: floralwhite;"></p>
+	<button id="get_date" onclick="getDate()"> click to get current date</button>
+	<script src="JS/index.js"></script>
+</body>
+</html>
