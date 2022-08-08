@@ -58,6 +58,83 @@ for ($i=0; $i <5 ; $i++) {
 	echo "Printed ".$i." times <br>"; 
 }
 
- ?>
+//is_int() function checks either it is integer or not and retuns either true or false
+$x= 531;
+$y = 65.89;
+
+echo (int)$y;
+
+if(is_int($x)){
+	echo "This is integer 69: ".$x."<br>";
+}
+if(is_int($y)){
+	echo "This is integer 72: ".$y."<br>";
+}
+//is_float() function checks either it is integer or not and retuns either true or false
+
+if(is_float($x)){
+	echo "This is float 75: ".$x."<br>";
+}
+if(is_float($y)){	
+	echo "This is float 78: ".$y."<br>";
+}
+//is_numeric() checks whether the given string is numeric or not and returns either true or false
+$a = 454;
+$b = "454";
+$c = "number";
+//checks either $a is numeric or not
+if(is_numeric($a)){
+	echo $a. " is numeric variable <br>";
+}else{
+	echo $a. " is non numeric variable <br>";
+}
+
+if(is_numeric($b)){
+	echo $b." is numeric variable <br>";
+}else{
+	echo $b." is non numeric variable <br>";
+}
+if(is_numeric($c)){
+	echo $c." is numeric variable <br>";
+}else{
+	echo $c." is non numeric variable <br>";
+}
+
+//in order to minimize the code we use user defined function
+function IsNumeric($variable){
+	if(is_numeric($variable)){
+		echo $variable. " is numeric variable <br>";
+	}else{
+		echo $variable. " is non numeric variable <br>";
+	}
+}
+function IsFloat($variable){
+	if(is_float($variable)){
+		echo $variable. " is float variable <br>";
+	}else{
+		echo $variable. " is non float variable <br>";
+	}
+}
+IsNumeric("School");
+IsNumeric($b);
+IsNumeric($c);
+IsFloat(1.85);
+IsFloat(1);
+
+function printYourName($name=null){
+	// if($name)
+	// 	echo "Your Name is ".$name;
+	// else 
+	// 	echo "John Doe";
+
+	$printedName = $name ?  "Your Name is ".$name : "John Doe";
+	echo $printedName;
+	echo $name ?  "Your Name is ".$name : "John Doe";
+}
+printYourName("Kapil Sapkota");
+printYourName();
+
+
+?>
 </body>
 </html>
