@@ -2414,6 +2414,11 @@ textarea.form-control-lg {
 .form-range::-moz-focus-outer {
   border: 0;
 }
+.form-design{
+  margin: 6rem 15rem; 
+  background-color:aqua;
+  border-radius: 25px;
+}
 .form-range::-webkit-slider-thumb {
   width: 1rem;
   height: 1rem;
@@ -7779,6 +7784,9 @@ textarea.form-control-lg {
 
 .mb-5 {
   margin-bottom: 3rem !important;
+}
+.mb-me{
+  margin: 3rem 1rem;
 }
 
 .mb-auto {

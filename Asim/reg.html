@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="MyCss/RegBootstrap.css" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CSS start</title>
@@ -12,13 +12,14 @@
   <nav class="navbar navbar-expand-lg bg-light gradient-2">
     <div class="container-fluid">
       <a class="navbar-brand">Welcome</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="Home.html">Home</a>
           </li>
         </ul>
         <form class="d-flex" role="search">
@@ -29,22 +30,37 @@
     </div>
   </nav>
 
-  <div class="container align-center  "  style="border:1px solid #000000">
-    <form>
-        <div class="mb-3 p-6">
-          <label class="form-label">Enter your details</label><br><br>
-          <input type="text" placeholder="Username" style="text-align:center;" class="form-control"  id="exampleInputUsername" aria-describedby="emailHelp"><br>
-          <input type="email" style="text-align:center;" placeholder="Email" class="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  <div class="container align-center  ">
+    <form class="form-design">
+      <div class="mb-me p-3">
+        <label class="form-label">Enter your details</label><br><br>
+        <input type="text" placeholder="Username" style="text-align:center;" class="form-control margin-me"
+          id="exampleInputUsername" aria-describedby="emailHelp"><br>
+        <input type="email" style="text-align:center;" placeholder="Email" class="form-control" id="exampleInputEmail1"
+          aria-describedby="emailHelp"><br>
+        <label class="form-label">DOB:</label>
+        <input type="date" placeholder="dd/mm/yy" style="text-align:center;" class="form-Date margin-me"
+          id="exampleDate" aria-describedby="date"><br>
+          <label>Gender:</label>
+        <input type="radio" id="male" name="Gender">
+          <label class="form-label" for="html">Male</label>
+          <input type="radio" id="female" name="Gender">
+        <label class="form-label" for="html">Female</label>
+        <input type="radio" id="other" name="Gender">
+        <label class="form-label" for="html">Other</label><br>
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         <div class="mb-3">
-          <input type="password" placeholder="Password" class="form-control" id="exampleInputPassword1">
+          <input type="password" placeholder="Password" class="form-control" id="exampleInputPassword1"><br>
+          <input type="password" placeholder="Rewrite your Password" class="form-control margin-me"
+            id="exampleInputPassword2">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button><br>
         <label>Already have an account?</label>
         <a href="index.html">Sign in</a>
-
+      </div>
     </form>
   </div>
 
   <script src="js/bootstrap.js"></script>
+
 </html>

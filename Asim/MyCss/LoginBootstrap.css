@@ -85,7 +85,11 @@
     scroll-behavior: smooth;
   }
 }
-
+.form-design{
+  margin: 6rem 15rem; 
+  background-color:aqua;
+  border-radius: 25px;
+}
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
