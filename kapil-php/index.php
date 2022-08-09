@@ -127,14 +127,44 @@ function printYourName($name=null){
 	// else 
 	// 	echo "John Doe";
 
-	$printedName = $name ?  "Your Name is ".$name : "John Doe";
-	echo $printedName;
-	echo $name ?  "Your Name is ".$name : "John Doe";
+	// $printedName = $name ?  "Your Name is ".$name : "John Doe";
+	// echo $printedName;
+	echo $name ?  "Your Name is ".$name."<br>" : "John Doe <br>";
 }
 printYourName("Kapil Sapkota");
 printYourName();
 
+function sum(int $a , int $b){
+	return  $a + $b;
+}
+function difference(int $a , int $b){
+	return $a - $b;
+}
+function product(int $a, int $b){
+	return $a * $b;
+}
+function quotient(int $a, int $b)
+{
+	return $a/$b;
+}
+echo "The sum of 2 and 3 is ".sum(2,3)."<br>";
+
+
+
 
 ?>
+
+<h1> nav bar example</h1>
+<ul>
+	<?php 
+
+$nav=["Home ", "SERVIES","ABOUT US" ," CONTACT"];
+foreach ($nav as $key => $value) {
+	echo "<li> $value </li>";
+}
+
+?>
+</ul>
+
 </body>
 </html>
