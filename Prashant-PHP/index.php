@@ -194,17 +194,138 @@ function printMyName($name=null){
 		echo "No name given ";
 	}*/
 
-	$printedName = $name ? "Your Name is ".$name : " Kasula";
+	$printedName = $name ? "Your Name is ".$name : " Kasula <br>";
 	echo $printedName;
 }
 printMyName("Prashant");
 printMyName();
+
+
+//
+
+
+function sum(int $a , int $b)
+{
+	$sum = $a + $b;
+	echo "The sum of $a and $b is $sum <br>";
+}
+sum(2,3); 
+
+
+function difference(int $a, int $b)
+{
+	$difference = $a - $b;
+	echo "The difference of $a and $b is $difference <br>";
+}	
+difference(5,1);
+
+function multiply(int $a, int $b)
+{
+	$multiply = $a * $b;
+	echo "The multiplication of $a and $b is $multiply <br>";
+}	
+multiply(5,3);
+
+function division(int $a, int $b)
+{
+	$division = $a / $b;
+	echo "The division of $a and $b is $division <br>";
+}	
+division(15,3);
+
+function moddivision(float $a, float $b)
+{
+	$moddivision = $a % $b;
+	echo "The  modular division of $a and $b is $moddivision <br>";
+}	
+moddivision(19,3);
+
+function rasiepower(float $a, float $b)
+{
+	$rasiepower = $a ** $b;
+	echo "The  power rasie of $a by $b is $rasiepower <br>";
+}	
+rasiepower(3,2);
+
+?>
+
+<h1>Nav bar example</h1>
+<ul>
+
+
+
+<?php
+	$nav =["Home","About us","Services","Contact"]; 
+
+	foreach ($nav as $key => $value) 
+	{
+		
+		echo "<li> $value </li>";
+
+	}
 	
+
+
 ?>
 
 
+</ul>
 
 
+<?php
+	$x = 5;
+	$y = 6;
+	$GLOBALS['z'] = $GLOBALS['x'] + $GLOBALS['y'];
+	echo "The sum of $x an $y is $z";
+
+
+	//$_SERVER Example
+
+	echo $_SERVER['PHP_SELF'];
+
+echo "<br>";
+echo $_SERVER['SERVER_NAME'];
+echo "<br>";
+echo $_SERVER['HTTP_HOST'];
+echo "<br>";
+echo $_SERVER['HTTP_REFERER'];
+echo "<br>";
+echo $_SERVER['HTTP_USER_AGENT'];
+echo "<br>";
+echo $_SERVER['SCRIPT_NAME'];
+echo "<br>";
+echo $_SERVER['SERVER_ADDR'];
+echo "<br>";
+echo $_SERVER['QUERY_STRING'];
+
+
+?>
+
+<form method="POST" action="$_SERVER['PHP_SELF'];?>">
+   Name: <input type="text" name="name">
+   Address: <input type="text" name="address">
+   Mobile No.: <input type="text" name="mobilenum">
+  <input type="submit">	
+</form>
+
+<?php
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+	var_dump($_SERVER['REQUEST_METHOD']);
+    // collect value of input field
+    $name = htmlspecialchars($_REQUEST['name']);
+    $address = htmlspecialchars($_REQUEST['address']);
+    $mobilenum = htmlspecialchars($_REQUEST['mobilenum']);
+
+    if (empty($name)) {
+        echo "Name is empty ";
+        echo "<br>";
+    } else {
+        echo $name;
+    }
+}
+
+?>
 
 </body>
 </html>
