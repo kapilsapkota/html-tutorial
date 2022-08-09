@@ -144,12 +144,38 @@
         	}
         	printanName("sujal");
         	printanName();
-        	function sum($a ,$c){
-        		echo "The sum of".$a. "and".$b. "is =".$a+$b;
 
+        	function sum(int $a ,int $c){
+        		$sum = $a + $c; 
+        		echo "The sum of ".$a. " and ".$c. " is =".$sum."<br>";
         	}
         	sum(3,4);
-	?>
+
+        	function sub(int $g, int $f){
+        		return abs($g-$f);
+        	}
+        	echo "The subtraction is =".sub(2,7)."<br>";
+
+            function product(int $x, int $y){
+        		return $x*$y;
+        	}
+        	echo "The product is =".product(2,7)."<br>";
+        	?>
+
+
+        <h1>Navbar Example</h1>
+        <ul>
+        <?php
+      	$nav=["Home" , "servies", "About Us", "Contact"];
+      	foreach ($nav as $key => $value) {
+        echo "<li> $value </li>";
+      		// code...
+      	}
+
+
+        ?>
+    </ul>
+
 
 </body>
 </html>
