@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>First PHP CLASS</title>
+	<link rel="stylesheet" type="text/css" href="s">
 </head>
 <body>
 <?php 
@@ -158,13 +159,71 @@ echo "The sum of 2 and 3 is ".sum(2,3)."<br>";
 <ul>
 	<?php 
 
-$nav=["Home ", "SERVIES","ABOUT US" ," CONTACT"];
+$nav=["HOME", "SERVIES","ABOUT US" ," CONTACT"];
 foreach ($nav as $key => $value) {
 	echo "<li> $value </li>";
 }
 
 ?>
 </ul>
+<h2>Global Variable Example</h2>
+<?php 
+	$x = 5;
+	$y = 6;
+	$GLOBALS['z'] = $GLOBALS['x'] + $GLOBALS['y'];
+	echo $z;
+
+	//$_SERVER Example
+	echo $_SERVER['PHP_SELF'];
+echo "<br>";
+echo $_SERVER['SERVER_NAME'];
+echo "<br>";
+echo $_SERVER['HTTP_HOST'];
+echo "<br>";
+echo $_SERVER['HTTP_REFERER'];
+echo "<br>";
+echo $_SERVER['HTTP_USER_AGENT'];
+echo "<br>";
+echo $_SERVER['SCRIPT_NAME'];
+echo "<br>";
+echo $_SERVER['SERVER_ADDR'];
+echo "<br>";
+echo $_SERVER['SERVER_SOFTWARE'];
+echo "<br>";
+echo $_SERVER['SERVER_PROTOCOL'];
+echo "<br>";
+
+
+?>
+<form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+	 Name: <input type="text" name="name" value="">
+	 Address: <input type="text" name="address">
+	 MobileNo: <input type="text" name="mobile_no">
+  <input type="submit">
+</form>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	
+	echo "<br>";
+    // collect value of input field
+    $name = htmlspecialchars($_REQUEST['name']);
+    $address = htmlspecialchars($_REQUEST['address']);
+    if (empty($name)) {
+        echo "Name is empty";
+        echo "<br>";
+    } else {
+        echo "Name is ".$name;
+         echo "<br>";
+    }
+    if (empty($address)) {
+        echo "Address is empty";
+         echo "<br>";
+    } else {
+        echo "Address is ".$address;
+         echo "<br>";
+    }
+}
+?>
 
 </body>
 </html>
