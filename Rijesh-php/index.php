@@ -14,8 +14,80 @@ echo "$text <br>";
 $a=1;
 $b=2;
 $sum=$a+$b;
-echo "the sum of $a and $b is $sum ";
+echo "the sum of $a and $b is $sum <br> ";
+function printName($name=null){
+	echo $name," is my name<br>";
+}
+printName("rijesh");
+function sum(int $a, int $b){
+	return $a+$b;}
+	echo"the sum of 2 and 3 is ".sum(2,3)." <br>";
 
+	function difference(int $a, int $b){
+		return $a-$b;
+	}
+	echo "the difference of 3 & 2 is".difference(3,2)."<br> ";
+function product(int $a , int $b)
+{
+return $a*$b;
+}
+echo "the product of 2 and 3 is ".product(2,3)."<br>";
   ?>
+  <H1>NAVBAR EXAPMLE</H1>
+  <ul>
+  <?php
+  $nav=["HOME","SERVICES","ABOUT US","CONTACT"];
+   foreach ($nav as $key => $value) {
+   	echo "<li> $value </li>";
+   }
+  ?>
+</ul>
+<h2>Global Variable Example</h2>
+<?php
+$x=5;
+$y=6;
+$GLOBALS['z'] = $GLOBALS['x'] + $GLOBALS['y'];
+echo $z;
+//$_SERVER EXAMPLE
+echo $_SERVER['PHP_SELF'];
+echo "<br>";
+echo $_SERVER['SERVER_NAME'];
+echo "<br>";
+echo $_SERVER['HTTP_HOST'];
+echo "<br>";
+echo $_SERVER['HTTP_REFERER'];
+echo "<br>";
+echo $_SERVER['HTTP_USER_AGENT'];
+echo "<br>";
+echo $_SERVER['SCRIPT_NAME'];
+echo "<br>";
+echo $_SERVER['SERVER_ADDR'];
+?>
+<form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+	Name: <input type="text" name="fname">
+	Address: <input type="text" name="address">
+	<input type="submit">
+</form>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	var_dump($_SERVER['REQUEST_METHOD']);
+    // collect value of input field
+    $name = htmlspecialchars($_REQUEST['fname']);
+    if (empty($name)) {
+        echo "Name is empty";
+    } else {
+        echo $name ;
+        echo "<br>";
+    }
+        $address = htmlspecialchars($_REQUEST['address']);
+    if (empty($address)) {
+        echo "Address is empty";
+    } else {
+        echo $address;
+    }
+}
+
+?>
+</body>
 </body>
 </html>
