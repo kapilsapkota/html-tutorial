@@ -135,6 +135,35 @@ printName();
 	//echo $printing;
 //	echo $name ? "ypur name is ".$name : "lamichhhane";
 //}	
+//sum div pro sub
+function sum(int $a , int $b)
+{
+	$sum = $a + $b;
+	echo "The sum of $a and $b is $sum <br>";
+}
+sum(2,3); 
+
+
+function difference(int $a, int $b)
+{
+	$difference = $a - $b;
+	echo "The difference of $a and $b is $difference <br>";
+}	
+difference(5,1);
+
+function multiply(int $a, int $b)
+{
+	$multiply = $a * $b;
+	echo "The multiplication of $a and $b is $multiply <br>";
+}	
+multiply(5,3);
+
+function division(int $a, int $b)
+{
+	$division = $a / $b;
+	echo "The division of $a and $b is $division <br>";
+}	
+division(15,3);
 
 echo "<br><h1>hello world</h1>";
 "<h2>learning backend server side programming </h2>";	
