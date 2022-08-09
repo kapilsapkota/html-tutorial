@@ -50,11 +50,41 @@
 	$replacedText = str_replace('text', 'replaced text','$text');
 	echo "<br> $text is replaced as <b>$replacedText</b>";
 
+	//for loop replaced
 	for ($i=0; $i <5 ; $i++) { 
 		// code...
 		echo "Printed ".$i." times <br>";
+
 	}
+	function sum(int $a, int $b){
+		$sum = $a + $b;
+		echo "the sum of $a and $b is $sum <br>";
+
+	}
+	function difference(int $a, int $b){
+	    return $a - $b;
+	}
+	echo "the difference of 4 & 3 is".difference(4,3)."<br>";
+
+
+	sum(3,4)
+	
+
+
 	?>
+	
+<h1>nav bar example </h1>
+<ul>
+	<?php
+
+   $nav = ["HOME","SERVICES","ABOUT US"];
+   foreach ($nav as $key => $value) {
+   	echo "<li> $value </li>";
+   }
+?>
+</ul>
+
+	 
 
 </body>
 </html>
