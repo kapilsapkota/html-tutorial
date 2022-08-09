@@ -190,11 +190,40 @@ echo "<br>";
 echo $_SERVER['HTTP_USER_AGENT'];
 echo "<br>";
 echo $_SERVER['SCRIPT_NAME'];
-        
+echo $_SERVER['SERVER_PROTOCOL']        
 
 
         //$_server Example
-         ?>    
+         ?>
+         <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+         	Name: <input type="text" name="fname">
+         	Address: <input type="text" name="address">
+         	<input type="submit">
+         </form>  
+
+
+         <?php 
+         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+         	echo "<br>";
+    $name = htmlspecialchars($_REQUEST['fname']);
+    $address = htmlspecialchars($_REQUEST['address']);
+    if (empty($name)) {
+        echo "Name is empty";
+        echo "<br>";
+    } else {
+        echo $name;
+        echo "<br>";
+    }
+    if (empty($address)) {
+        echo "Address is empty";
+        echo "<br>";
+    } else {
+        echo $address;
+        echo "<br>";
+    }
+}
+         ?>
+
 
 </body>
 </html>
