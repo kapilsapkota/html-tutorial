@@ -150,8 +150,57 @@
 	printYourName("Rabin Shrestha");
 	printYourName();
 
+	function sum(int $a, int $b){
+		return $a+$b;
+	}
+	echo "The sum of 2 and 3 is ".sum(2,3)."<br>";
+     
+    function difference(int $a, int $b){
+    	return $a-$b;
+    }
+    echo"The difference of 2 and 3 is ".difference(2,3)."<br>";
+    
+    function product(int $a, int $b){
+    	return $a*$b;
+    }
+    echo"The product of 2 and 3 is ".product(2,3)."<br>";
+    
+     ?>
 
-	  ?>
+     <h1>Nav Bar Examples</h1>
+     <ul>
+     <?php
+       $nav=["Home","Services","About us","contact"];
+       foreach($nav as $key => $value){
+       	echo"<li> $value </li>";
+
+       }
+
+     ?>
+ </ul>
+ <h2>Global Variable Examples</h2>
+ <?php
+ $x=5;
+ $y=6;
+ $GLOBALS['z'] = $GLOBALS['x']+$GLOBALS['y'] ;
+ echo $z;
+
+ //$_SERVER Examples
+ echo $_SERVER['PHP_SELF'];
+echo "<br>";
+echo $_SERVER['SERVER_NAME'];
+echo "<br>";
+echo $_SERVER['HTTP_HOST'];
+echo "<br>";
+echo $_SERVER['HTTP_REFERER'];
+echo "<br>";
+echo $_SERVER['HTTP_USER_AGENT'];
+echo "<br>";
+echo $_SERVER['SCRIPT_NAME'];
+
+ ?>
+
+
 
 </body>
 </html>
