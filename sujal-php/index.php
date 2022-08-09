@@ -171,11 +171,30 @@
         echo "<li> $value </li>";
       		// code...
       	}
-
-
         ?>
-    </ul>
+        </ul>
+        <h2>Global variable Example</h2>
+        <?php
+        $x=5; 
+        $y=6;
+        $GLOBALS['z']=$GLOBALS['x']+$GLOBALS['y'];
+        echo $z;
+        echo $_SERVER['PHP_SELF'];
+echo "<br>";
+echo $_SERVER['SERVER_NAME'];
+echo "<br>";
+echo $_SERVER['HTTP_HOST'];
+echo "<br>";
+echo $_SERVER['HTTP_REFERER'];
+echo "<br>";
+echo $_SERVER['HTTP_USER_AGENT'];
+echo "<br>";
+echo $_SERVER['SCRIPT_NAME'];
+        
 
+
+        //$_server Example
+         ?>    
 
 </body>
 </html>
