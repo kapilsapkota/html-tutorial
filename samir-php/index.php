@@ -168,13 +168,154 @@ function printYourName($name=null){
 printYourName("samm");
 printYourName();
 
-function summ($a,$b){
-	$sum=$a+$b;
-	echo "<br><br>The sum of $a and $b is: $sum";
+//function summ(int$a,int$b){
+//	$sum=$a+$b;
+//	echo "<br><br>The sum of $a and $b is: $sum.";
+//}
+
+//summ(3,3);
+//summ(5,6);
+
+
+function sum(int$a,int$b){
+	return $a+$b;
+	
+}
+echo "<br><br>The sum of 3 and 9 is: ".sum(3,9);
+
+function difference(int$a,int$b){
+	$diff=$a-$b;
+	echo "<br><br>The diff of $a and $b is: $diff.";
+}
+difference(5,2);
+
+
+function product(int$a,int$b){
+	return $a*$b;
+	
+}
+echo "<br><br>The product of 3 and 4 is: ".product(3,4);
+
+
+function division(int$a,int$b){
+	return $a/$b;
+	
+}
+echo "<br><br>The division of 8 and 2 is: ".division(8,2);
+
+ ?>
+
+
+
+
+<h1>NavBar Example<h1>
+
+<ul>
+<?php
+
+$nav=["Home","About","Services","Contact"];
+foreach ($nav as $key => $value) {
+	echo "<li> $value </li>";
+	
 }
 
-summ(2,3);
- ?>
+?>
+</ul>
+<h2>Global Variable Example</h2>
+<?php
+	$x=5;
+	$y=6;
+	$GLOBALS['z']=$GLOBALS['x']+$GLOBALS['y'];
+	echo $z."<br><br>";
+
+	//_$SERVER Example
+	echo $_SERVER['PHP_SELF'];
+	echo "<br><br>";
+	echo $_SERVER['SERVER_NAME'];
+	echo "<br><br>";
+	echo $_SERVER['HTTP_HOST'];
+	echo "<br><br>";
+	//echo $_SERVER['HTTP_REFERRER'];
+	echo "<br><br>";
+	echo $_SERVER['HTTP_USER_AGENT'];
+	echo "<br><br>";
+	echo $_SERVER['SCRIPT_NAME'];
+	echo "<br><br>";
+	echo $_SERVER['SERVER_ADDR'];
+	echo "<br><br>";
+	echo $_SERVER['SERVER_SOFTWARE'];
+	echo "<br><br>";
+
+	echo $_SERVER['GATEWAY_INTERFACE'];
+	echo "<br><br>";
+	echo $_SERVER['SERVER_PROTOCOL'];
+	echo "<br><br>";
+	echo $_SERVER['REQUEST_METHOD'];
+	echo "<br><br>";
+	echo $_SERVER['REQUEST_TIME'];
+	echo $_SERVER['QUERY_STRING'];
+	echo "<br><br>";
+	echo $_SERVER['HTTP_ACCEPT'];
+	echo "<br><br><br><br>";
+
+?>
+
+//POST METHOD
+<form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+	 Name: <input type="text" name="fname">
+	 Address: <input type="text" name="address">
+	 <input type="submit">
+</form>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	//var_dump($_REQUEST);
+    // collect value of input field
+    $name = htmlspecialchars($_REQUEST['fname']);
+    $address = htmlspecialchars($_REQUEST['address']);
+    if (empty($name)) {
+        echo "<br>Name is empty";
+    } else {
+        echo "<br>Name is ".$name;
+    }
+    if (empty($address)) {
+        echo "<br>Address is empty";
+    } else {
+        echo "<br>Address is ".$address;
+    }
+}
+?>
+
+//GET METHOD
+<form method="GET" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
+	 Userame: <input type="text" name="username">
+	 Class: <input type="text" name="class">
+	 Phone No.: <input type="text" name="phone">
+	 <input type="submit">
+</form>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+	//var_dump($_REQUEST);
+    // collect value of input field
+    $username = htmlspecialchars($_REQUEST['username']);
+    $class = htmlspecialchars($_REQUEST['class']);
+    $phone = htmlspecialchars($_REQUEST['phone']);
+    if (empty($username)) {
+        echo "<br>Userame is empty";
+    } else {
+        echo ".<br>Username is ".$username;
+    }
+    if (empty($class)) {
+        echo ".<br>Class is empty";
+    } else {
+        echo ".<br>Class is ".$class;
+    }
+    if (empty($phone)) {
+        echo ".<br>Phone No. is empty";
+    } else {
+        echo ".<br>Phone No. is ".$phone;
+    }
+}
+?>
 
 </body>
 </html>
