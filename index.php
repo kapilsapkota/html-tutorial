@@ -7,7 +7,7 @@
 </head>
 <body>
   <?php
-echo "<h1>sanjeev </h1>";
+echo "<h1>Ale magar </h1>";
 print("here <br>");
 $text="This is the text";
 echo "$text <br>";
