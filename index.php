@@ -94,19 +94,19 @@
 ?>
 
 <?php
-  // preg_match() example   
-  $str = "nist is my college ";
-  echo "this is inital string:" .$str."<br>";
-  $pattern ="/nist/i";
-  echo preg_match($pattern, $str);//output 1
+      // preg_match() example   
+      $str = "nist is my college ";
+      echo "this is inital string:" .$str."<br>";
+      $pattern ="/nist/i";
+      echo preg_match($pattern, $str);//output 1
 
-  $check = preg_match($pattern, $str);
-  if ($check == 1) {
-    echo preg_replace($pattern, "hello", $str);
-  }
-  else{
-    echo "nist is my college";
-  }
+      $check = preg_match($pattern, $str);
+      if ($check == 1) {
+        echo preg_replace($pattern, "hello", $str);
+      }
+      else{
+        echo "nist is my college";
+      }
 
 ?>
 </body>
