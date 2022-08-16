@@ -27,5 +27,6 @@
 		$GLOBALS['z'] = $GLOBALS['a'] +$GLOBALS['b'];
 		echo $z;
 	?>
+	
 </body>
 </html>
