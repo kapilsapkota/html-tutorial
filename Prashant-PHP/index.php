@@ -297,35 +297,105 @@ echo "<br>";
 echo $_SERVER['SERVER_ADDR'];
 echo "<br>";
 echo $_SERVER['QUERY_STRING'];
-
-
 ?>
 
-<form method="POST" action="$_SERVER['PHP_SELF'];?>">
-   Name: <input type="text" name="name">
-   Address: <input type="text" name="address">
-   Mobile No.: <input type="text" name="mobilenum">
-  <input type="submit">	
+<h1>POST method</h1>
+<form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+	 Name: <input type="text" name="name" value="">
+	 Address: <input type="text" name="address">
+	 MobileNo: <input type="text" name="mobile_no">
+  <input type="submit">
 </form>
 
-<?php
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-	var_dump($_SERVER['REQUEST_METHOD']);
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	
+	echo "<br>";
     // collect value of input field
     $name = htmlspecialchars($_REQUEST['name']);
     $address = htmlspecialchars($_REQUEST['address']);
-    $mobilenum = htmlspecialchars($_REQUEST['mobilenum']);
-
     if (empty($name)) {
-        echo "Name is empty ";
+        echo "Name is empty";
         echo "<br>";
     } else {
-        echo $name;
+        echo "Name is ".$name;
+         echo "<br>";
+    }
+    if (empty($address)) {
+        echo "Address is empty";
+         echo "<br>";
+    } else {
+        echo "Address is ".$address;
+         echo "<br>";
+    }
+}
+?>
+
+
+<!--GET METHOD-->
+
+<h1>GET method</h1>
+<form method="GET" action="<?php echo $_SERVER['PHP_SELF'];?>">
+	 Name: <input type="text" name="user_name" value="">
+	 Address: <input type="text" name="address">
+	 MobileNo: <input type="text" name="mobile_no">
+  <input type="submit">
+</form>
+
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+	
+	echo "<br>";
+    // collect value of input field
+    $user_name = htmlspecialchars($_REQUEST['user_name']);
+    $class = htmlspecialchars($_REQUEST['class']);
+    $phone = htmlspecialchars($_REQUEST['phone']);
+    if (empty($user_name)) {
+        echo "Username is empty";
+        echo "<br>";
+    } else {
+        echo "Username is ".$user_name;
+         echo "<br>";
+    }
+    if (empty($class)) {
+        echo "Class is empty";
+         echo "<br>";
+    } else {
+        echo "phone is ".$phone;
+         echo "<br>";
     }
 }
 
+
 ?>
+
+<?php
+
+	//preg_match()Function 
+
+	$str = "This is NIST College!";
+	echo "This is initial string: ".$str."<br>";
+	$pattern = "/nist/i";
+	echo preg_match($pattern, $str)."<br>";
+	$check = preg_match($pattern, $str);
+
+	if ($check == 1) {
+		echo preg_replace($pattern,"My",$str); //Outputs "This is My college !"
+
+	}else{
+		echo $str."<br>";
+	}
+	
+
+?>
+
+<!-- 16 Aug 2022, Tue--->
+
+		
+
+
 
 </body>
 </html>
