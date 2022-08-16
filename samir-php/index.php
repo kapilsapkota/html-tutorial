@@ -314,6 +314,24 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     } else {
         echo ".<br>Phone No. is ".$phone;
     }
+    echo "<br><br>";
+}
+?>
+<?php
+//preg_match function
+$str = "This is Nist College";
+$pattern = "/nist/i";
+echo "This is initial text: ".$str."<br>";
+echo preg_match($pattern, $str)."<br>";
+
+$check = preg_match($pattern, $str);
+if($check==1)
+{
+	echo preg_replace($pattern, "My", $str);
+}
+else
+{
+	echo "<br><br>";
 }
 ?>
 
