@@ -26,6 +26,10 @@
                     }
                     else{       
                         $name = checkInput($_POST['name']);
+                        // users allows alphabets and white space
+                        if(preg_match("/^[a-z A-Z-]*$/",$name)){
+                            $nameError = "Only letters and whitespaces allowed";
+                        }
                     }
 
                     //Email validation 
@@ -34,8 +38,12 @@
                     }
                     else{       
                         $email = checkInput($_POST['email']);
+                        //check email format
+                        if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+                                $emailError = "Please enter validate email";
+                        }
                     }
-
+    
                     //Address validation 
                     if(empty($_POST ['address'])){
                         $addressError= "Address is required";
@@ -50,6 +58,9 @@
                     }
                     else{       
                         $phone = checkInput($_POST['phone']);
+                        if(!filter_var($phone,FILTER_VALIDATE_INT)){
+                            $phoneError ="enter validate number";
+                        }
                     }
 
                     //Gender validation 
@@ -100,7 +111,7 @@
                 <span class="error">*<?php echo $phoneError;?></span>
                 <br><br>
 
-                Remarks : <input type="text" name ="reanrks" value="" <?php echo  $remarks;?><textarea name ="remarks">
+                Remarks :<textarea name ="remarks">
                     <?php    echo $remarks; ?>
                 </textarea>
                 <span class="error">*<?php echo $remarksError;?></span>
