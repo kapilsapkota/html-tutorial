@@ -29,6 +29,10 @@
 		
 	}else{
 		$name =checkInput($_POST['name']);
+		//usernae allows any alphabets and white spaces
+		if (!preg_match("/^[a-z A-Z]*$/", $name)) {
+			$nameError="only letters and whitespaces are allowed";
+		}
 	}
 
 
@@ -44,6 +48,11 @@
 		
 	}else{
 		$email =checkInput($_POST['email']);
+		if (!filter_var($email,FILTER_VALIDATE_EMAIL)) {
+			// code...
+
+			$emailError="please enter valid email format";
+		}
 	}
 
 	if(empty($_POST['phone'])){
@@ -51,6 +60,10 @@
 		
 	}else{
 		$phone =checkInput($_POST['phone']);
+		if (!filter_var($phone,FILTER_VALIDATE_INT)) {
+			$phoneError = "please enter the integer";
+			// code...
+		}
 	}
 	if(empty($_POST['remarks'])){
 			$remarksError="remarks is required";
@@ -86,11 +99,11 @@
 		Name:<input type="text" name="name" value="<?php echo $name; ?>">
 		<span class="error">*<?php echo $nameError; ?></span>
 		<br><br>
-		Email:<input type="email" name="email" value="<?php echo $email; ?>">
+		Email:<input type="text" name="email" value="<?php echo $email; ?>">
 		<span class="error">*<?php echo $emailError;?></span>
 		<br><br>
 		Adress:<input type="text" name="address" value="<?php echo $address; ?>">
-		<span class="error">*<?php echo $phoneError; ?></span>
+		<span class="error">*<?php echo $addressError; ?></span>
 		<br><br>
 		Phone:<input type="number" name="phone" value="<?php echo $phone; ?>">
 		<span class="error">*<?php echo $phoneError;?></span><br>
@@ -102,9 +115,9 @@
 		<br><br>
 
 		Gender:
-		<input type="radio" name="Gender" <?php if (isset($gender)&&$gender=="male") {echo"checked";} ?> value="male">Male
-		<input type="radio" name="Gender" <?php if (isset($gender)&&$gender=="female") {echo"checked";} ?> value="female">Female
-		<input type="radio" name="Gender" <?php if (isset($gender)&&$gender=="others") {echo"checked";} ?> value="others">Others
+		<input type="radio" name="gender" <?php if (isset($gender)&&$gender=="male") {echo"checked";} ?> value="male">Male
+		<input type="radio" name="gender" <?php if (isset($gender)&&$gender=="female") {echo"checked";} ?> value="female">Female
+		<input type="radio" name="gender" <?php if (isset($gender)&&$gender=="others") {echo"checked";} ?> value="others">Others
 		<span class="error">*<?php echo $genderError; ?></span>
 		<br><br>
 		<input type="submit" value="submit">
