@@ -197,10 +197,80 @@ echo "<br>";
 echo $_SERVER['HTTP_USER_AGENT'];
 echo "<br>";
 echo $_SERVER['SCRIPT_NAME'];
+echo"<br>";
+echo $_SERVER['SERVER_ADDR'];
+?>
 
- ?>
 
+<form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+  Name: <input type="text" name="fname">
+  Address:<input type="text" name="address">
+  <input type="submit">
+</form>
 
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // collect value of input field
+  $name = htmlspecialchars($_REQUEST['fname']);
+  if (empty($name)) {
+    echo "Name is empty";
+  } else {
+    echo $name;
+    echo"<br>";
+  }
+  $address= htmlspecialchars($_REQUEST['address']);
+  if (empty($address)) {
+  	// code...
+  echo"address is empty";
+  }else{
+  	echo $address;
+  	echo"<br>";
+  }
+}
+?>
+<h2>GET METHOD</h2>
+<!--GET METHOD-->
+<form method="GET" action="<?php echo $_SERVER['PHP_SELF'];?>">
+  Name: <input type="text" name="user_name" value="">
+  Address:<input type="text" name="address" >
+  MobileNo:<input type="text" name="mobile" >
+  <input type="submit">
+</form>
 
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "GET"){
+	echo "<br>";
+	$name=htmlspecialchars($_REQUEST['user_name']);
+	  $phone = htmlspecialchars($_REQUEST['mobile']);
+		  if (empty($name)) {
+		    echo "Name is empty";
+		  } else {
+		    echo $name;
+		    echo"<br>";
+		  }
+  $address= htmlspecialchars($_REQUEST['address']);
+		  if (empty($address)) {
+		  	// code...
+		  echo"address is empty";
+		  }else{
+		  	echo $address;
+		  	echo"<br>";
+		}
+	} 
+
+?>
+<?php
+//preg_match() Function
+$str = "This is Nist College!";
+echo "This is initial string: ".$str."<br>";
+$pattern = "/nist/i";
+echo preg_match($pattern, $str);//outputs 1
+$check= preg_match($pattern,$str);
+if ($check==1){
+      echo preg_replace($pattern, "My", $str); // Outputs "This is My college!"
+   }else{
+       echo $str."<br>";
+   }
+?>
 </body>
 </html>
