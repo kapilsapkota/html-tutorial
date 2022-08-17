@@ -42,6 +42,13 @@
 				$class = checkInput($_POST['class']);
 			}
 
+			if(empty($_POST['favourite'])){
+				$favouriteError = "Favourite programming is required";
+			}
+			else{
+				$favourite = checkInput($_POST['favourite']);
+			}
+
 			if(empty($_POST['skills'])){
 				$skillsError = "Skill is required";
 			}
@@ -80,25 +87,19 @@
 
 		Favourite:
 				<select name="favourite">
-						<option name="favourite" value="c+">c+<?php if (isset($favourite) && $favourite == "c+") {
-					echo "selected";} ?></option>
-						<option name="favourite" value="c++" >c++<?php if (isset($favourite) && $favourite == "c++") {
-					echo "selected";} ?></option>
-						<option name="favourite" value="python" >python<?php if (isset($favourite) && $favourite == "python") {
-					echo "selected";} ?></option>
+					<option disabled>--choose--</option>
+						<option name="favourite" value="c+">c+</option>
+						<option name="favourite" value="c++" >c++</option>
+						<option name="favourite" value="python" selected>python</option>
 				</select>
 				<span class="error">* <?php echo $favouriteError; ?></span>
 		<br><br>
 
 		Skills:
-		<input type="checkbox" name="skills" value="PHP" <?php if (isset($skills) && $skills == "php") {
-			echo "checked";} ?>>PHP
-		<input type="checkbox" name="skills" value="HTML"<?php if (isset($skills) && $skills == "HTML") {
-			echo "checked";} ?>>HTML
-		<input type="checkbox" name="skills" value="CSS"<?php if (isset($skills) && $skills == "CSS") {
-			echo "checked";} ?>>CSS
-		<input type="checkbox" name="skills" value="JAVASCRIPT"<?php if (isset($skills) && $skills == "JAVASCRIPT") {
-			echo "checked";} ?>>JAVASCRIPT
+		<input type="checkbox" name="skills" value="PHP">PHP
+		<input type="checkbox" name="skills" value="HTML">HTML
+		<input type="checkbox" name="skills" value="CSS">CSS
+		<input type="checkbox" name="skills" value="JAVASCRIPT">JAVASCRIPT
 
 		<span class="error">* <?php echo $skillsError; ?></span>
 		<br><br>

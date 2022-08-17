@@ -26,7 +26,10 @@
 			}
 			else{
 				$name = checkInput($_POST['name']);
-				$name = ucfirst($name);
+				//username allows only alphabets and white space
+				if(!preg_match("/^[a-zA-Z- ]*$/", $name)){
+					$nameError="Only letters and whitespaces are allowed";
+				}
 			}
 
 			//Address Validation
@@ -43,6 +46,9 @@
 			}
 			else{
 				$phone = checkInput($_POST['phone']);
+				if(!filter_var($phone,FILTER_VALIDATE_INT)){
+					$phoneError = "Please enter the integer";
+				}
 			}
 
 			//Email Validation
@@ -51,6 +57,10 @@
 			}
 			else{
 				$email = checkInput($_POST['email']);
+				//check the email format
+				if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+					$emailError="Please enter valid email format";
+				}
 			}
 
 			//Gender Validation
@@ -89,7 +99,7 @@
 		<span class="error">* <?php echo $nameError; ?></span>
 		<br><br>
 
-		Email: <input type="email" name="email" value="<?php echo $email; ?>">
+		Email: <input type="text" name="email" value="<?php echo $email; ?>">
 		<span class="error">* <?php echo $emailError; ?></span>
 		<br><br>
 
