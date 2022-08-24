@@ -10,13 +10,13 @@ $cookie_value1="jonn";
 setcookie($cookie_name,$cookie_value,time()+(86400*30),'/');
 
 //Editing the cookie named 'user'
-setcookie($cookie_name,$cookie_value1,time()+(3),'/');
+setcookie($cookie_name,"something",time()+(3),'/');
 
 //setting the cookie named 'name'
 setcookie($cookie_name1,$cookie_value,time()+(86400*30),'/');
 
 //deleting  the cookie
-setcookie($cookie_name1,$cookie_value,time()-3600,'/');
+//setcookie($cookie_name1,$cookie_value,time()-3600,'/');
 ?>
 <!DOCTYPE html>
 <html>
