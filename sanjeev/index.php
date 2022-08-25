@@ -7,7 +7,7 @@
 </head>
 <body>
   <?php
-
+< HEAD
 echo "<h1>Ale magar </h1>";
 print("here <br>");
 $text="This is the text";
@@ -16,7 +16,13 @@ $a=1;
 $b=2;
 $sum=$a+$b;
 echo "the sum of $a and $b is $sum <br> ";
-
+function printName($name=null){
+	echo $name," is my name<br>";
+}
+printName("rijesh");
+function sum(int $a, int $b){
+	return $a+$b;}
+	echo"the sum of 2 and 3 is ".sum(2,3)." <br>";
 
       echo "<h1>sanjeev</h1>";
       print("here <br>");
