@@ -195,9 +195,10 @@ echo $_SERVER['SERVER_PROTOCOL']
 
         //$_server Example
          ?>
-         <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
-         	Name: <input type="text" name="fname">
-         	Address: <input type="text" name="address">
+         <h2>Post Method</h2>
+         <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
+         	Name: <input type="text" name="fname" value="">
+         	Address: <input type="text" name="faddress">
          	<input type="submit">
          </form>  
 
@@ -206,7 +207,7 @@ echo $_SERVER['SERVER_PROTOCOL']
          if ($_SERVER["REQUEST_METHOD"] == "POST") {
          	echo "<br>";
     $name = htmlspecialchars($_REQUEST['fname']);
-    $address = htmlspecialchars($_REQUEST['address']);
+    $address = htmlspecialchars($_REQUEST['faddress']);
     if (empty($name)) {
         echo "Name is empty";
         echo "<br>";
@@ -219,10 +220,42 @@ echo $_SERVER['SERVER_PROTOCOL']
         echo "<br>";
     } else {
         echo $address;
+        echo "<br><br>";
+    }
+    }
+
+    ?>
+    <h2> Get Method</h2>
+        <form method="GET" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
+        Class: <input type="text" name="fclass" value="">
+        Phone: <input type="text" name="fphone">
+        <input type="submit">
+        </form>  
+
+
+         <?php 
+         //get method
+         if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            echo "<br>";
+    $class = htmlspecialchars($_REQUEST['fclass']);
+    $phone = htmlspecialchars($_REQUEST['fphone']);
+    if (empty($class)) {
+        echo "class is empty";
+        echo "<br>";
+    } else {
+        echo $class;
         echo "<br>";
     }
-}
-         ?>
+    if (empty($phone)) {
+        echo "phone is empty";
+        echo "<br>";
+    } else {
+        echo $phone;
+        echo "<br>";
+    }
+    }
+
+    ?>
 
 
 </body>
