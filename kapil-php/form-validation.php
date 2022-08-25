@@ -21,26 +21,34 @@
 
 	//check either the request is get or post
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
 		//Name Validation 
 		if(empty($_POST['name'])){
 			$nameError = "Name is required";
 		}else{
 			$name = checkInput($_POST['name']);
+
 			//username allows only alphabets and white space
 			if (!preg_match("/^[a-zA-Z-] *$/", $name)) {
 				$nameError = "Only letters and whitespaces are allowed";
 			}
 		}
 
+
+		}
 		//Email Validation
 		if(empty($_POST['email'])){
 			$emailError = "Email is required";
 		}else{
 			$email = checkInput($_POST['email']);
+
 			//check the email format
 			if (!filter_var($email,FILTER_VALIDATE_EMAIL)) {
 				$emailError = "Please enter valid email format";
 			}
+		}
+
+
 		}
 
 		//Address Validation
@@ -89,7 +97,7 @@
 		<span class="error">* <?php echo $nameError; ?></span>
 		<br><br>
 
-		Email : <input type="text" name="email" value="<?php echo $email; ?>">
+		Email : <input type="email" name="email" value="<?php echo $email; ?>">
 		<span class="error">* <?php echo $emailError; ?></span>
 		<br><br>
 
