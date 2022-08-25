@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,30 +21,58 @@
 
 	//check either the request is get or post
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		# code...
+
 		//Name Validation 
 		if(empty($_POST['name'])){
 			$nameError = "Name is required";
 		}else{
 			$name = checkInput($_POST['name']);
+
+			//username allows only alphabets and white space
+			if (!preg_match("/^[a-zA-Z-] *$/", $name)) {
+				$nameError = "Only letters and whitespaces are allowed";
+			}
+		}
+
+
 		}
 		//Email Validation
 		if(empty($_POST['email'])){
 			$emailError = "Email is required";
 		}else{
 			$email = checkInput($_POST['email']);
+
+			//check the email format
+			if (!filter_var($email,FILTER_VALIDATE_EMAIL)) {
+				$emailError = "Please enter valid email format";
+			}
 		}
+
+
+		}
+
 		//Address Validation
 		if(empty($_POST['address'])){
 			$addressError = "Address is required";
 		}else{
 			$address = checkInput($_POST['address']);
 		}
+
 		//Phone Validation
 		if(empty($_POST['phone'])){
 			$phoneError = "Phone is required";
 		}else{
 			$phone = checkInput($_POST['phone']);
+			if (!filter_var($phone,FILTER_VALIDATE_INT)) {
+				$phoneError = "Please enter the integer";
+			}
+		}
+
+		//Remarks Validation
+		if(empty($_POST['remarks'])){
+			$remarksError = "Remarks is required";
+		}else{
+			$remarks = checkInput($_POST['remarks']);
 		}
 
 	}
