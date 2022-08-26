@@ -6,12 +6,18 @@
 <body>
 	<h1>UPLOADING A FILE ON THE SERVER</h1>
 <?php
+function checkDirectoryExists($folder){
+	if (!file_exists($folder)){
+		@mkdir($folder);
+	}
+}
 if ($_SERVER['REQUEST_METHOD']== 'POST'){
 	$folder = 'uploads';
 	//check if we have folder in server or not.
 	if(!file_exists($folder)){
 		@mkdir($folder);
 	}
+}
 	$file_name = $_FILES['image']['name'];
 	$file_type= $_FILES['image']['type'];
 	$file_tmp_path= $_FILES['image']['tmp_name'];
@@ -51,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD']== 'POST'){
 			echo " error occered";
 		}
 	}
-}
+
 //uploading the pdf.
 $file_name = $_FILES['file']['name'];
 	$file_type= $_FILES['file']['type'];
