@@ -1,43 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>File Create in php</title>
 </head>
 <body>
-	<h1>File Creating in php</h1>
-	<?php
-	$file = fopen("newText.txt", "w") or die('Could not write the file');
+<h1>File Creating in php</h1>
 
-	//stringnor sentance
-	$newText = "My Name \n";
-	//Writing sentences in newText.txt
-	fwrite($file, $newText);
+<?php
+//Create or open the file named newText.txt in write mode
+$file = fopen("newText.txt", "w") or die('Could not write the file');
 
-    //another text written
-	$newText = "My Name 2 \n";
-	fwrite($file, $newText);
+//string or sentence
+$newText = "My Name \n";
 
-	//extra text for read operation
-	$newText1 = "Web development \n PHP \n Symfony \n Codeignitor \n Laravel \n";
-	fwrite($file, $newText1);
+//writing sentence in newText.txt
+fwrite($file, $newText);
 
-	
+$newText = "My Name 2 \n";
+fwrite($file, $newText);
 
-	//echo "Successfully written $newText in $file";
+// echo "Successfully written $newText in newText.txt";
+//close the file after completing work
+fclose($file);
 
-	//close the file after completing work
+?>
+
+<?php
+//Create or open the file named newText.txt in write mode
+$file = fopen("newText.txt", "w") or die('Could not write the file');
+
+//string or sentence
+$newText = "My new file \n<br>";
+
+//writing sentence in newText.txt
+fwrite($file, $newText);
+$limit = 10;
+while ($limit != 0) {
+	$limit = $limit -1;
+	$newText1 ="WEB DEVELOPMENT \n PHP \n SYMFONY \n CODEIGNITOR \n LARAVEL \n<br>";
+fwrite($file, $newText1);
+}
+
+
+// echo "Successfully written $newText1 in newText.txt";
+//close the file after completing work
+fclose($file);
+
+?>
+
+
+<?php
+	//opening file in read mode to read the content
+	$file = fopen('newText.txt', "r") or die('Could not read');
+
+	//read until the filesize of given file
+	echo fread($file, filesize('newText.txt'));
+
 	fclose($file);
-	?>
-	<?php
-	$file = fopen('newText.txt', "r");
-	while (!feof($file)){
-		fread($file, filesize("newText.txt"));
-	}
-	fclose($file);
-
-	?>
-
+?>
 </body>
 </html>
