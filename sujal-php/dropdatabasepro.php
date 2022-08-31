@@ -21,12 +21,14 @@
 		echo "Connected Sucessfully";
 
 		//create sql
-		$sql = "CREATE DATABASE csit_php_1";
+		$sql = "DROP DATABASE csit_php_1";
 
 		//create databse
 		if (mysqli_query($conn, $sql)) {
-            echo "Could not create the database".mysql_error($conn);
-			
+            echo "Database csit_php_1 delected Sucessfully";
+        }else{
+            echo "Could not delete the database".
+            mysql_error($conn);
 		}
 	}
 		else{

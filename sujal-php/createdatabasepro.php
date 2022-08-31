@@ -25,7 +25,8 @@
 
 		//create databse
 		if (mysqli_query($conn, $sql)) {
-            echo "Could not create the database".mysql_error($conn);
+            echo "Could not create the database".
+            mysql_error($conn);
 			
 		}
 	}
