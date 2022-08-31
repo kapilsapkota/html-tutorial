@@ -12,9 +12,12 @@ function checkDirectoryExists($folder){
 	}
 }
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+	print_r($_FILES);
 	$folder='images';
+	$fileFolder='fileFolder';
 	//check if we have folder or not
 	checkDirectoryExists($folder);
+
 
 	//getting the filename
 	$file_name = $_FILES['image']['name'];
