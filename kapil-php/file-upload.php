@@ -24,6 +24,14 @@ function checkDirectoryExists($folder){
 		@mkdir($folder);
 	}
 }
+function checkFileSize($file_size,$exact_file_size, $message, $checkingVariable){
+	if($file_size > $exact_file_size){
+		$checkingVariable = 0 ;
+		echo $message;
+	}
+}
+
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$folder = 'images';
@@ -59,10 +67,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 
 	//checking the file size
-	if($file_size > 2097152){
-		$upload = 0 ;
-		echo "Sorry! your file is greater than 2 MB";
-	}
+	checkFileSize($file_size,2097152,"Sorry! your file is greater than 2 MB",$upload);
+
 
 	//upload the image if all validation passes
 	if ($upload == 0) {
@@ -110,10 +116,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 
 	//checking the file size
-	if($file_size_file > 5242880){
-		$uploadFile = 0 ;
-		echo "Sorry! your file is greater than 5 MB";
-	}
+	checkFileSize($file_size_file,5242880,"Sorry! your file is greater than 5 MB",$uploadFile);
+	// if($file_size_file > 5242880){
+	// 	$uploadFile = 0 ;
+	// 	echo "Sorry! your file is greater than 5 MB";
+	// }
 
 	//upload the image if all validation passes
 	if ($uploadFile == 0) {

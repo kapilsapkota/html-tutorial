@@ -34,9 +34,11 @@ $newText = "Kapil Sapkota \n";
 
 //writing sentence in newText.txt
 fwrite($file, $newText);
-$limit = 10;
+
+//writing something 5 times
+$limit = 5;
 while ($limit != 0) {
-	$limit = $limit -1;
+	$limit = $limit - 1;
 	$newText1 ="WEB DEVELOPMENT \n PHP \n SYMFONY \n CODEIGNITOR \n LARAVEL \n";
 fwrite($file, $newText1);
 }
@@ -47,8 +49,7 @@ fwrite($file, $newText1);
 fclose($file);
 
 ?>
-
-
+<h1>File Reading Example</h1>
 <?php
 	//opening file in read mode to read the content
 	$file = fopen('newText.txt', "r") or die('Could not read');
