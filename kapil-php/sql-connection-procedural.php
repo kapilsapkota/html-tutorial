@@ -21,6 +21,8 @@
 	}else{
 		die("Connection Failed!".mysqli_connect_error());
 	}
+
+	//Closing the connection
 	// mysqli_close($conn);
 ?>
 </body>

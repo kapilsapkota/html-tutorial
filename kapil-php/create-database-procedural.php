@@ -15,7 +15,6 @@
 	$conn = mysqli_connect($serverName, $userName, $password);
 
 	//Check the connection 
-
 	if($conn){
 		echo "Connected Successfully!";
 
@@ -28,6 +27,7 @@
 			}else{
 				echo "Could not create the database". mysqli_error($conn);
 			}
+
 	}else{
 		die("Connection Failed!".mysqli_connect_error());
 	}
